@@ -1,0 +1,12 @@
+%h1
+  Сайт-донор
+
+= @donor.name
+%br
+= @donor.url
+%br
+
+
+= link_to 'Редактировать', edit_donor_path(@donor)
+\|
+= link_to 'Назад', donors_path

@@ -1,0 +1,19 @@
+%h1
+  Список сайтов-доноров
+
+- @donors.each do |donor|
+  .row
+    .col-md-8
+      %pre
+        = preserve do
+          = donor.name
+          %br
+          = donor.url
+          %br
+          = link_to 'Показать ', donor
+          = link_to 'Редактировать ', edit_donor_path(donor)
+          = link_to 'Удалить', donor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'Добавить новый сайт-донор', new_donor_path
